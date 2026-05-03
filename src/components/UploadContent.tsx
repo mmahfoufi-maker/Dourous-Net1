@@ -16,7 +16,7 @@ const ALLOWED = [
 
 interface SeanceOption {
   id: string; date_heure: string; statut: string;
-  professeurs: { nom: string; prenom: string; matiere: string } | null;
+  professeurs: { nom: string; prenom: string; matiere: string } | { nom: string; prenom: string; matiere: string }[] | null;
 }
 
 export default function UploadContent({ seances, profile, userId }: {
@@ -184,7 +184,8 @@ export default function UploadContent({ seances, profile, userId }: {
                     onChange={e => setSeanceId(e.target.value)} required>
                     <option value="">Choisir une séance…</option>
                     {seances.map(s => {
-                      const p = s.professeurs;
+                      const pRaw = s.professeurs;
+                      const p = Array.isArray(pRaw) ? pRaw[0] : pRaw;
                       return (
                         <option key={s.id} value={s.id}>
                           {p ? `${p.prenom} ${p.nom} (${p.matiere})` : '?'} —{' '}

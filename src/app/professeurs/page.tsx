@@ -4,7 +4,7 @@ import AppShell from '@/components/layout/AppShell';
 import ProfsContent from '@/components/ProfsContent';
 
 export default async function ProfsPage() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect('/login');
 

@@ -4,7 +4,7 @@ import AppShell from '@/components/layout/AppShell';
 import UploadContent from '@/components/UploadContent';
 
 export default async function UploadPage() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect('/login');
 

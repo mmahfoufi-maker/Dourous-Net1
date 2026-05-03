@@ -140,7 +140,8 @@ export default function DashboardContent({ profile, recentSeances, allStatuts, u
                 </div>
               )
               : recentSeances.map((s, i) => {
-                const prof = s.professeurs;
+                const profRaw = s.professeurs;
+                const prof = Array.isArray(profRaw) ? profRaw[0] : profRaw;
                 const grad = prof ? (MATIERE_GRAD[prof.matiere] ?? 'linear-gradient(135deg,#1a7a4a,#0e5030)') : '#888';
                 return (
                   <div key={s.id} style={{

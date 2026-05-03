@@ -27,7 +27,7 @@ export interface Seance {
   devoir_url: string | null;
   devoir_nom: string | null;
   created_at: string;
-  professeurs?: Professeur;
+  professeurs?: Professeur | Professeur[];
 }
 
 export const MATIERES_COLORS: Record<string, string> = {

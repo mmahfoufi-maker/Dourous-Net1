@@ -4,7 +4,7 @@ import AppShell from '@/components/layout/AppShell';
 import InteractionsContent from '@/components/InteractionsContent';
 
 export default async function InteractionsPage() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect('/login');
 

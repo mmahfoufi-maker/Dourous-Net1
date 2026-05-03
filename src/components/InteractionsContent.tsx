@@ -105,7 +105,8 @@ export default function InteractionsContent({ seances }: { seances: Seance[] }) 
                 </thead>
                 <tbody>
                   {filtered.map(s => {
-                    const prof = s.professeurs;
+                    const profRaw = s.professeurs;
+                    const prof = Array.isArray(profRaw) ? profRaw[0] : profRaw;
                     const Icon = STATUT_ICON[s.statut];
                     const grad = prof ? (MATIERE_GRAD[prof.matiere] ?? 'linear-gradient(135deg,#1a7a4a,#0e5030)') : '#888';
                     return (
