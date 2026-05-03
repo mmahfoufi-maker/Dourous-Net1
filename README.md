@@ -1,6 +1,10 @@
 # Dourous-Net1
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ec90424e96eaae5e6633845bc5b053a697ce4180
 Plateforme web de gestion éducative permettant de connecter les élèves, professeurs et séances dans un environnement cloud moderne.
 
 ##  Description du projet
