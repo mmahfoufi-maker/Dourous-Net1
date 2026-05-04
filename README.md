@@ -123,3 +123,5 @@ Contrairement à un data center classique :
 
 
 ##  Identifiants de test
+email: test@dourous-net.dz
+mot de passe: Maya2026
